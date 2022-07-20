@@ -9,11 +9,11 @@ function App() {
   const [list, setList] = useState([])
   useEffect(() => {
     fetchData()
-    axios.get(`http://localhost:3500/tasks`).then((res) => {
+    axios.get(`http://localhost:3500/players`).then((res) => {
       setList(res.data);
     });
   }, [])
-
+ console.log(list)
   //updating list  
   async function fetchData() {
     await axios.get(`http://localhost:3500/tasks`).then((res) => {
